@@ -32,6 +32,8 @@ Returns true if the hash matches, otherwise false.
 Security Notes:
 Passwords are hashed using PBKDF2 with a random salt for protection against dictionary attacks.
 Plain passwords are never stored in the database.
+
+
 2. Accounts Class
 ->The Accounts class handles the creation and management of bank accounts.
 
@@ -45,6 +47,7 @@ generateAccountNumber():-> Generates a unique account number based on the last u
 
 If no accounts exist, it starts with a default number (e.g., 10000100).
 account_exist(String email):->Checks if an account exists for a user with the given email.
+
 
 3. AccountManager Class
 The AccountManager class handles financial transactions such as credit, debit, money transfers, and balance inquiries.
@@ -66,6 +69,7 @@ getBalance(long account_number):-> Retrieves the current balance of the account 
 * Transaction Management:
 The class disables auto-commit before operations such as debit, credit, or transfer to ensure transactional integrity.
 If an error occurs (e.g., insufficient funds or incorrect pin), the transaction is rolled back to its original state.After successful operations, the transaction is committed.
+
 
 4. BankingApp Class
 The BankingApp is the entry point of the system, implementing the user interface logic.
